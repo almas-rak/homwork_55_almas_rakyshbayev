@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} {{ todo.title }} {% endblock title %}
+{% block content %}
+
+<h1>{{ todo.tittle }}</h1>
+<p>{{todo.description}}</p>
+<p>{{ todo.status }}</p>
+<p>{{ todo.date_of_completion }}</p>
+
+<a class="btn btn-danger" href="{% url 'delete_todo' todo.pk %}" role="button">DELETE</a>
+<a class="btn btn-primary" href="{% url 'todos' %}" role="button">BACK</a>
+
+{% endblock content %}
