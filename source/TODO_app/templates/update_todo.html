@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}Add TODO{% endblock title %}
+{% block content %}
+<form action="{% url 'update_todo' todo.pk %}" method="POST">
+    {% include 'partial/todo_base_form.html' %}
+</form>
+{% endblock content %}
