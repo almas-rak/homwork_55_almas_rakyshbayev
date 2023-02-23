@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Add TODO{% endblock title %}
+{% block content %}
+<form action="{% url 'create_todo' %}" method="POST">
+    {% csrf_token %}
+    <div class="table-responsive">
+        <table class="table table-primary">
+            {{ form }}
+        </table>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+</form>
+{% endblock content %}
