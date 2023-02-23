@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %} TODO delete {% endblock title %}
+{% block content %}
+
+<h1>Вы точно хотите удалить задачу?</h1>
+
+<h3>{{ todo.tittle }}</h3>
+<form action="{% url 'confirm_delete' todo.pk %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-red">DELETE</button>
+    <a  class="btn btn-primary" href="{% url 'todos' %}" role="button">CANCEL</a>
+</form>
+
+{% endblock content %}
