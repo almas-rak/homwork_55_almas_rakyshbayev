@@ -14,3 +14,6 @@ class TODO(models.Model):
     date_of_completion = models.DateField(blank=True, null=True, default=None, verbose_name='Дата завершения')
     is_deleted = models.BooleanField(default=False)
     at_deleted = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return self.title
