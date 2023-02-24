@@ -3,11 +3,11 @@
 {% block content %}
 
 <div class="container">
-    <table id="result-list">
+    <table class="table col-9">
         <thead>
             <tr>
-                <th scope="col">
-                    <div class="text">
+                <th scope="col-4">
+                    <div class="">
                         <span>TITLE</span>
                     </div>
                 </th>
@@ -28,11 +28,11 @@
             {% for todo in todos %}
                 <tr>
                     <th>
-                        <a href="{% url 'detail_todo' todo.pk %}">{{ todo.title }}</a>
+                        <a class="list-group-item list-group-item-action" href="{% url 'detail_todo' todo.pk %}">{{ todo.title }}</a>
                     </th>
                     <td>{{ todo.status }}</td>
-                    <td>{{ todo.date_of_completion }}</td>
-                    <td><a href="{% url 'update_todo' todo.pk %}">
+                    <td class="col-3">{{ todo.date_of_completion }}</td>
+                    <td class="col-1"><a href="{% url 'update_todo' todo.pk %}">
                         <svg width="13" height="13" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                             <path fill="#efb80b"
                             d="M491 1536l91-91-235-235-91 91v107h128v128h107zm523-928q0-22-22-22-10 0-17 7l-542 542q-7 7-7 17 0 22 22 22 10 0 17-7l542-542q7-7 7-17zm-54-192l416 416-832 832h-416v-416zm683 96q0 53-37 90l-166 166-416-416 166-165q36-38 90-38 53 0 91 38l235 234q37 39 37 91z"/>

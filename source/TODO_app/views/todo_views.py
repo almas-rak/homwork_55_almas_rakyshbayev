@@ -18,7 +18,7 @@ def create_todo(request: WSGIRequest):
         form = TodoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('detail_todo', )
+            return redirect('detail_todo', pk=form.instance.pk)
         else:
             return render(request, 'create_todo.html', context={'form': form})
 
@@ -42,7 +42,7 @@ def delete_todo(request: WSGIRequest, pk):
     return render(request, 'todo_confirm_delete.html', context={'todo': todo})
 
 
-def confirm_delete(pk):
+def confirm_delete(request: WSGIRequest, pk):
     todo = get_object_or_404(TODO, pk=pk)
     todo.delete()
     return redirect('todos')
