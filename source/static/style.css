@@ -17,12 +17,21 @@
 
 }
 
-.branding {
-    /* width: 40%; */
-    
-}
+
 
 .user-tools{
-    /* width: 40%; */
+
     text-align: end;
+}
+
+.a-delete{
+text-decoration:none;
+color: red;
+}
+
+.a-edit{
+text-decoration:none;
+}
+.a-edit span{
+    margin: 5px;
 }
